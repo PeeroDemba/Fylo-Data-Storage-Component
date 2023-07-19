@@ -1,0 +1,344 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(./images/bg-desktop.png);
+  background-color: hsl(229, 57%, 11%);
+  background-repeat: no-repeat;
+  background-position: top 50vh left 0%;
+  background-size: cover;
+  font-family: "Raleway", sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  min-height: 97vh;
+  min-width: 80vw;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15%;
+}
+
+.card1 {
+  background-color: hsl(228, 56%, 26%);
+  height: 12rem;
+  border-top-right-radius: 6rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 2rem 6rem 2rem 2rem;
+
+  & img:first-child {
+    grid-column: 1 / span 3;
+    margin-bottom: 2rem;
+  }
+
+  & img:nth-child(2) {
+    background-color: hsl(229, 57%, 11%);
+    padding: 0.7rem 0.85rem;
+    border-radius: 0.5rem;
+  }
+  & img:nth-child(3) {
+    background-color: hsl(229, 57%, 11%);
+    padding: 0.8rem 0.7rem;
+    border-radius: 0.5rem;
+  }
+  & img:last-child {
+    background-color: hsl(229, 57%, 11%);
+    padding: 0.9rem 0.7rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.card2 {
+  display: flex;
+  align-items: flex-end;
+  height: 12rem;
+}
+
+.card2i {
+  background-color: hsl(228, 56%, 26%);
+  height: 9rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 2rem;
+  position: relative;
+
+  & > p:first-child {
+    color: #bbb;
+    margin-bottom: 1rem;
+
+    & > span {
+      color: white;
+      font-weight: 400;
+    }
+  }
+
+  & .progress {
+    width: 100%;
+    height: 1.3rem;
+    border-radius: 1rem;
+    background-color: hsl(228, 65%, 17%);
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.7rem;
+
+    & .meter {
+      width: 81.5%;
+      height: 0.9rem;
+      border-radius: 1rem;
+      background-image: linear-gradient(
+        to right,
+        hsl(6, 100%, 80%),
+        hsl(335, 100%, 65%)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      & .ball {
+        width: 0.8rem;
+        height: 80%;
+        border-radius: 50%;
+        background-color: white;
+        margin-right: 0.2rem;
+        margin-bottom: 0.05rem;
+      }
+    }
+  }
+
+  & .value {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+  }
+
+  & .entire {
+    position: absolute;
+    top: -30%;
+    right: 2rem;
+
+    .reminder {
+      color: black;
+      background-color: white;
+      width: 10rem;
+      height: 4rem;
+      border-radius: 0.5rem;
+      border-bottom-right-radius: 0rem;
+      padding: 1rem 1rem;
+      text-align: center;
+
+      .text {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          color: #999;
+          font-weight: 700;
+          font-size: 0.8rem;
+        }
+
+        & span {
+          font-size: 2rem;
+          font-weight: 700;
+          padding-right: 0.4rem;
+        }
+      }
+
+      & .angle {
+        width: 0;
+        height: 0;
+        border-width: 20px 25px 20px 0px;
+        border-style: solid solid solid solid;
+        border-color: transparent white transparent transparent;
+        position: absolute;
+        bottom: -30%;
+        right: 0%;
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1279px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    min-height: 97vh;
+    min-width: 80vw;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12%;
+  }
+
+  .card1 {
+    background-color: hsl(228, 56%, 26%);
+    height: 12rem;
+    border-top-right-radius: 6rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem 6rem 2rem 2rem;
+  }
+
+  .card2i {
+    background-color: hsl(228, 56%, 26%);
+    height: 9rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    color: white;
+    padding: 2rem;
+    position: relative;
+
+    & .entire {
+      position: absolute;
+      top: -30%;
+      right: 2rem;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  main {
+    display: grid;
+    grid-template-columns: 31vw 48vw;
+    gap: 2rem;
+    min-height: 97vh;
+    min-width: 80vw;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+  }
+
+  .card1 {
+    background-color: hsl(228, 56%, 26%);
+    height: 12rem;
+    border-top-right-radius: 6rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem 6rem 2rem 2rem;
+  }
+
+  .card2i {
+    background-color: hsl(228, 56%, 26%);
+    height: 9rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    color: white;
+    padding: 2rem;
+    position: relative;
+
+    & .entire {
+      position: absolute;
+      top: -30%;
+      right: 7%;
+      right: 2rem;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    min-height: 100vh;
+    background-image: url(./images/bg-mobile.png);
+    background-repeat: repeat-x;
+    background-position: top 100% left 0;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-end;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 80vw;
+    gap: 0rem;
+    min-height: 50vh;
+    min-width: 80vw;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .card1 {
+    padding: 3rem 7rem 3rem 2rem;
+    height: 13rem;
+  }
+
+  .card2 {
+    display: flex;
+    align-items: flex-end;
+    height: 12rem;
+  }
+
+  .card2i {
+    height: 90%;
+
+    & .progress {
+      & .meter {
+        & .ball {
+          width: 0.8rem;
+          height: 80%;
+        }
+      }
+    }
+
+    & .entire {
+      position: absolute;
+      top: 80%;
+      width: 100%;
+      right: 0;
+      display: flex;
+      justify-content: center;
+
+      & .reminder {
+        border-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        padding: 1rem 1rem;
+        text-align: center;
+
+        & .angle {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    display: grid;
+    grid-template-columns: 90vw;
+    gap: 0rem;
+    min-height: 50vh;
+    min-width: 90vw;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+}
